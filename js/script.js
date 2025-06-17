@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const whatsappNumber = '201507000933'; // رقم الواتساب الموحد لجميع الاستفسارات
+    const whatsappNumber = '201019351945'; // رقم الواتساب الموحد لجميع الاستفسارات
 
     // ------------------------------------
     // 1. Mobile Menu Functionality
