@@ -1,0 +1,218 @@
+/* General Body Styles */
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl; /* Ensure Right-to-Left for Arabic */
+    text-align: right; /* Default text alignment for RTL */
+}
+
+/* Override default text-align for specific elements if needed */
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+/* Header/Navbar adjustments for RTL */
+header .container {
+    /* Use justify-end to align the single item (website name) to the right in RTL */
+    justify-content: flex-end; /* This replaces justify-between if only one item */
+}
+
+/* Hero Section */
+.hero-section {
+    /* Corrected image path */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero-bg.jpg"); /* Adjusted path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 0;
+}
+
+/* Services Section */
+/* Apply hover effects directly to the <a> tag which is now .service-card */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Ensure text color is inherited or set explicitly */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #065F46; /* Tailwind emerald-700 */
+    color: white;
+}
+
+/* Testimonials Section */
+.testimonial-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+/* Contact Section */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align icons to the right in RTL */
+    gap: 0.5rem;
+}
+
+.contact-info p i {
+    margin-right: 0; /* Remove default margin-right */
+    margin-left: 0.5rem; /* Add margin-left for RTL */
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+}
+
+footer .mb-4 {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Space out social icons */
+}
+
+/* Specific Styles for Travel Pages (Hajj/Umrah, Tours, Flight, Hotels, Visa) */
+.trip-card, .program-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover, .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input adjustments for RTL */
+.shadow.appearance-none.border.rounded.w-full.py-3.px-4 {
+    padding-right: 1rem; /* Adjust padding for text direction */
+    padding-left: 1rem;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* Full rounded */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Space between text and icon */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Icon adjustment for RTL in buttons */
+.whatsapp-btn .fab {
+    margin-left: 0.5rem; /* Space to the left of the icon in RTL */
+    margin-right: 0;
+}
+
+/* AI Chat Interface specific styles for RTL */
+#ai-chat-interface {
+    right: 1.5rem; /* Position AI chat on the right for RTL */
+    left: auto; /* Remove left positioning */
+}
+
+#ai-chat-interface .p-4.flex {
+    flex-direction: row-reverse; /* Swap input and send button order */
+}
+
+#ai-chat-interface #chat-input {
+    border-radius: 0 0.25rem 0.25rem 0; /* Adjust border-radius for RTL */
+}
+
+#ai-chat-interface #send-chat {
+    border-radius: 0.25rem 0 0 0.25rem; /* Adjust border-radius for RTL */
+}
+
+#chat-messages div {
+    text-align: right; /* Default chat messages to right */
+}
+
+#chat-messages .text-left { /* For user messages */
+    text-align: left;
+    margin-right: auto; /* Push user messages to left */
+}
+
+#chat-messages .text-right { /* For AI messages */
+    text-align: right;
+    margin-left: auto; /* Push AI messages to right */
+}
+
+/* Ensure form-radio appears correctly in RTL */
+.form-radio {
+    margin-left: 0.5rem; /* Space after the radio button in RTL */
+    margin-right: 0;
+}
+
+/* Multi-city remove button position for RTL */
+.multi-city-flight-segment .remove-flight-btn {
+    left: auto;
+    right: 0.5rem; /* Position to the right */
+}
+
+/* Keyframe animations for hero section */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s; /* Delay for sequential animation */
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+    animation-delay: 0.6s; /* Delay for sequential animation */
+}

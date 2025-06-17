@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YassirouTravel - حجز الطيران</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Custom styles for multi-city remove button */
+        .remove-flight-btn {
+            background-color: #ef4444; /* Red-500 */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.3s ease;
+        }
+        .remove-flight-btn:hover {
+            background-color: #dc2626; /* Red-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+   <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex justify-start items-center px-4"> <a href="../index.html" class="text-lg font-semibold text-emerald-600 hover:text-emerald-700 transition duration-300">
+            <i class="fas fa-home ml-2"></i>العودة للصفحة الرئيسية
+        </a>
+    </div>
+</header>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-6 md:hidden">
+        <button id="close-menu" class="absolute top-4 left-4 text-gray-700 text-3xl focus:outline-none">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="../index.html" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">الرئيسية</a>
+        <a href="../index.html#services" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">خدماتنا</a>
+        <a href="hajj-umrah.html" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">برامج الحج والعمرة</a>
+        <a href="tours.html" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">الرحلات السياحية</a>
+        <a href="#" class="text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">حجز الطيران</a>
+        <a href="../index.html#contact" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">اتصل بنا</a>
+    </div>
+
+    <section id="flight-booking" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">حجز الطيران</h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-700">أسرع وأسهل طريقة لحجز تذاكر الطيران إلى أي وجهة حول العالم بأفضل الأسعار.</p>
+
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-xl text-right">
+                <form id="flight-booking-form" class="space-y-6">
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-3">نوع الرحلة:</label>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="flight-type-selection" value="round-trip" class="form-radio text-emerald-600 h-5 w-5" checked>
+                                <span class="mr-2 text-gray-700">ذهاب وعودة</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="flight-type-selection" value="one-way" class="form-radio text-emerald-600 h-5 w-5">
+                                <span class="mr-2 text-gray-700">ذهاب فقط</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="flight-type-selection" value="multi-city" class="form-radio text-emerald-600 h-5 w-5">
+                                <span class="mr-2 text-gray-700">مدن متعددة</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="full-name" class="block text-gray-700 text-sm font-bold mb-2">الاسم بالكامل:</label>
+                        <input type="text" id="full-name" name="full-name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+
+                    <div>
+                        <label for="phone-number" class="block text-gray-700 text-sm font-bold mb-2">رقم الجوال (مع مفتاح الدولة):</label>
+                        <input type="tel" id="phone-number" name="phone-number" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="+9665xxxxxxxx" required>
+                    </div>
+
+                    <div id="single-round-trip-fields">
+                        <div>
+                            <label for="departure-city" class="block text-gray-700 text-sm font-bold mb-2">مدينة المغادرة:</label>
+                            <input type="text" id="departure-city" name="departure-city" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
+
+                        <div>
+                            <label for="arrival-city" class="block text-gray-700 text-sm font-bold mb-2">مدينة الوصول:</label>
+                            <input type="text" id="arrival-city" name="arrival-city" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="departure-date" class="block text-gray-700 text-sm font-bold mb-2">تاريخ المغادرة:</label>
+                                <input type="date" id="departure-date" name="departure-date" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                            <div id="return-date-field">
+                                <label for="return-date" class="block text-gray-700 text-sm font-bold mb-2">تاريخ العودة (اختياري للذهاب فقط):</label>
+                                <input type="date" id="return-date" name="return-date" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="multi-city-fields" class="hidden">
+                        <div id="multi-city-flights-container" class="space-y-4">
+                            <div class="multi-city-flight-segment border p-4 rounded-md bg-gray-50">
+                                <h4 class="text-lg font-semibold mb-3 text-gray-800">الرحلة 1:</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div>
+                                        <label for="multi-departure-city-1" class="block text-gray-700 text-sm font-bold mb-2">مدينة المغادرة:</label>
+                                        <input type="text" id="multi-departure-city-1" name="multi-departure-city-1" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    </div>
+                                    <div>
+                                        <label for="multi-arrival-city-1" class="block text-gray-700 text-sm font-bold mb-2">مدينة الوصول:</label>
+                                        <input type="text" id="multi-arrival-city-1" name="multi-arrival-city-1" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    </div>
+                                    <div>
+                                        <label for="multi-departure-date-1" class="block text-gray-700 text-sm font-bold mb-2">تاريخ المغادرة:</label>
+                                        <input type="date" id="multi-departure-date-1" name="multi-departure-date-1" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="add-flight-segment-btn" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            أضف رحلة أخرى <i class="fas fa-plus mr-1"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="adults" class="block text-gray-700 text-sm font-bold mb-2">البالغون (+12 سنة):</label>
+                            <input type="number" id="adults" name="adults" min="1" value="1" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
+                        <div>
+                            <label for="children" class="block text-gray-700 text-sm font-bold mb-2">الأطفال (2-11 سنة):</label>
+                            <input type="number" id="children" name="children" min="0" value="0" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div>
+                            <label for="infants" class="block text-gray-700 text-sm font-bold mb-2">الرضع (أقل من سنتين):</label>
+                            <input type="number" id="infants" name="infants" min="0" value="0" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="flight-class" class="block text-gray-700 text-sm font-bold mb-2">درجة الطيران:</label>
+                        <select id="flight-class" name="flight-class" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <option value="">اختر درجة الطيران</option>
+                            <option value="economy">اقتصادي (Economy)</option>
+                            <option value="premium-economy">اقتصادي ممتاز (Premium Economy)</option>
+                            <option value="business">رجال أعمال (Business)</option>
+                            <option value="first-class">أولى (First Class)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="notes" class="block text-gray-700 text-sm font-bold mb-2">ملاحظات إضافية (اختياري):</label>
+                        <textarea id="notes" name="notes" rows="4" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أية طلبات خاصة، تفضيلات المقاعد، شركات طيران مفضلة..."></textarea>
+                    </div>
+
+                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full whatsapp-btn">
+                        أرسل طلب الحجز عبر الواتساب <i class="fab fa-whatsapp mr-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+            <p>&copy; 2025 YassirouTravel. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <button id="open-chat" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none transition duration-300 z-40">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+
+    <div id="ai-chat-interface" class="hidden fixed bottom-20 right-6 bg-white w-80 h-96 rounded-lg shadow-xl flex flex-col z-50">
+        <div class="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+            <h3 class="text-lg font-semibold">مساعد Yassirou الذكي</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200 focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto border-b border-gray-200 text-right">
+            <div class="mb-2 text-gray-700">مرحباً! كيف يمكنني مساعدتك في رحلتك اليوم؟</div>
+        </div>
+        <div class="p-4 flex">
+            <input type="text" id="chat-input" class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="اكتب سؤالك هنا...">
+            <button id="send-chat" class="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 focus:outline-none">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappNumber = '+201507000933'; // رقم الواتساب الموحد - يرجى تغييره إلى رقمك الفعلي
+
+            // ------------------------------------
+            // Mobile Menu Functionality
+            // ------------------------------------
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // ------------------------------------
+            // Flight Type Selection Logic
+            // ------------------------------------
+            const flightTypeRadios = document.querySelectorAll('input[name="flight-type-selection"]');
+            const singleRoundTripFields = document.getElementById('single-round-trip-fields');
+            const returnDateField = document.getElementById('return-date-field');
+            const multiCityFields = document.getElementById('multi-city-fields');
+            const addFlightSegmentBtn = document.getElementById('add-flight-segment-btn');
+            const multiCityFlightsContainer = document.getElementById('multi-city-flights-container');
+
+            let flightSegmentCount = 1; // Tracks the number of multi-city segments
+
+            function toggleFlightFields() {
+                const selectedType = document.querySelector('input[name="flight-type-selection"]:checked').value;
+
+                if (selectedType === 'round-trip') {
+                    singleRoundTripFields.classList.remove('hidden');
+                    returnDateField.classList.remove('hidden');
+                    multiCityFields.classList.add('hidden');
+                    // Mark single/round trip fields as required
+                    document.getElementById('departure-city').setAttribute('required', 'required');
+                    document.getElementById('arrival-city').setAttribute('required', 'required');
+                    document.getElementById('departure-date').setAttribute('required', 'required');
+                    document.getElementById('return-date').setAttribute('required', 'required'); // For round-trip
+
+                    // Remove required from multi-city fields
+                    multiCityFlightsContainer.querySelectorAll('input').forEach(input => {
+                        input.removeAttribute('required');
+                    });
+
+                } else if (selectedType === 'one-way') {
+                    singleRoundTripFields.classList.remove('hidden');
+                    returnDateField.classList.add('hidden');
+                    multiCityFields.classList.add('hidden');
+                    // Mark single/round trip fields as required, return date not required
+                    document.getElementById('departure-city').setAttribute('required', 'required');
+                    document.getElementById('arrival-city').setAttribute('required', 'required');
+                    document.getElementById('departure-date').setAttribute('required', 'required');
+                    document.getElementById('return-date').removeAttribute('required');
+
+                    // Remove required from multi-city fields
+                    multiCityFlightsContainer.querySelectorAll('input').forEach(input => {
+                        input.removeAttribute('required');
+                    });
+
+                } else if (selectedType === 'multi-city') {
+                    singleRoundTripFields.classList.add('hidden');
+                    multiCityFields.classList.remove('hidden');
+                    // Remove required from single/round trip fields
+                    document.getElementById('departure-city').removeAttribute('required');
+                    document.getElementById('arrival-city').removeAttribute('required');
+                    document.getElementById('departure-date').removeAttribute('required');
+                    document.getElementById('return-date').removeAttribute('required');
+
+                    // Mark multi-city fields as required (at least the first segment)
+                    // Ensure the first multi-city segment fields are required
+                    const firstMultiDepCity = document.getElementById('multi-departure-city-1');
+                    const firstMultiArrCity = document.getElementById('multi-arrival-city-1');
+                    const firstMultiDepDate = document.getElementById('multi-departure-date-1');
+                    if (firstMultiDepCity) firstMultiDepCity.setAttribute('required', 'required');
+                    if (firstMultiArrCity) firstMultiArrCity.setAttribute('required', 'required');
+                    if (firstMultiDepDate) firstMultiDepDate.setAttribute('required', 'required');
+                }
+
+                // Update min dates for all relevant date inputs
+                updateMinDates();
+            }
+
+            flightTypeRadios.forEach(radio => {
+                radio.addEventListener('change', toggleFlightFields);
+            });
+
+            // Add new multi-city flight segment
+            addFlightSegmentBtn.addEventListener('click', () => {
+                if (flightSegmentCount >= 5) { // Limit to 5 segments
+                    alert('لا يمكنك إضافة أكثر من 5 رحلات في طلب المدن المتعددة.');
+                    return;
+                }
+                flightSegmentCount++;
+                const newSegmentHtml = `
+                    <div class="multi-city-flight-segment border p-4 rounded-md bg-gray-50">
+                        <button type="button" class="remove-flight-btn absolute top-2 left-2 text-sm px-2 py-1 rounded-md" data-segment-id="${flightSegmentCount}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-800">الرحلة ${flightSegmentCount}:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label for="multi-departure-city-${flightSegmentCount}" class="block text-gray-700 text-sm font-bold mb-2">مدينة المغادرة:</label>
+                                <input type="text" id="multi-departure-city-${flightSegmentCount}" name="multi-departure-city-${flightSegmentCount}" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                            <div>
+                                <label for="multi-arrival-city-${flightSegmentCount}" class="block text-gray-700 text-sm font-bold mb-2">مدينة الوصول:</label>
+                                <input type="text" id="multi-arrival-city-${flightSegmentCount}" name="multi-arrival-city-${flightSegmentCount}" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                            <div>
+                                <label for="multi-departure-date-${flightSegmentCount}" class="block text-gray-700 text-sm font-bold mb-2">تاريخ المغادرة:</label>
+                                <input type="date" id="multi-departure-date-${flightSegmentCount}" name="multi-departure-date-${flightSegmentCount}" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                multiCityFlightsContainer.insertAdjacentHTML('beforeend', newSegmentHtml);
+                updateMinDates(); // Update min date for the new segment
+
+                // Add event listener for the new remove button
+                const newRemoveButton = multiCityFlightsContainer.lastElementChild.querySelector('.remove-flight-btn');
+                newRemoveButton.addEventListener('click', function() {
+                    this.closest('.multi-city-flight-segment').remove();
+                    // Re-index segments if needed (optional, for display only)
+                    reindexMultiCitySegments();
+                });
+            });
+
+            // Function to re-index segment numbers after removal
+            function reindexMultiCitySegments() {
+                const segments = multiCityFlightsContainer.querySelectorAll('.multi-city-flight-segment');
+                segments.forEach((segment, index) => {
+                    const segmentNumber = index + 1;
+                    segment.querySelector('h4').textContent = `الرحلة ${segmentNumber}:`;
+                    // Update data-segment-id for remove button
+                    const removeBtn = segment.querySelector('.remove-flight-btn');
+                    if (removeBtn) {
+                        removeBtn.dataset.segmentId = segmentNumber;
+                    }
+                    // Update input IDs and names (optional, but good practice for consistency)
+                    segment.querySelectorAll('input').forEach(input => {
+                        input.id = input.id.replace(/-\d+$/, `-${segmentNumber}`);
+                        input.name = input.name.replace(/-\d+$/, `-${segmentNumber}`);
+                    });
+                });
+                flightSegmentCount = segments.length; // Update total count
+            }
+
+
+            // ------------------------------------
+            // Flight Booking Form Submission
+            // ------------------------------------
+            const flightBookingForm = document.getElementById('flight-booking-form');
+            if (flightBookingForm) {
+                flightBookingForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const fullName = document.getElementById('full-name').value;
+                    const phoneNumber = document.getElementById('phone-number').value;
+                    const adults = document.getElementById('adults').value;
+                    const children = document.getElementById('children').value;
+                    const infants = document.getElementById('infants').value;
+                    const flightClass = document.getElementById('flight-class').value;
+                    const notes = document.getElementById('notes').value;
+                    const selectedType = document.querySelector('input[name="flight-type-selection"]:checked').value;
+
+                    let message = `طلب حجز طيران:\n`;
+                    message += `نوع الرحلة: ${selectedType === 'round-trip' ? 'ذهاب وعودة' : selectedType === 'one-way' ? 'ذهاب فقط' : 'مدن متعددة'}\n`;
+                    message += `الاسم: ${fullName}\n`;
+                    message += `الجوال: ${phoneNumber}\n`;
+
+                    if (selectedType === 'multi-city') {
+                        const segments = multiCityFlightsContainer.querySelectorAll('.multi-city-flight-segment');
+                        segments.forEach((segment, index) => {
+                            const segmentNum = index + 1;
+                            // Ensure to get values from the correct elements based on updated IDs
+                            const depCity = segment.querySelector(`#multi-departure-city-${segmentNum}`).value;
+                            const arrCity = segment.querySelector(`#multi-arrival-city-${segmentNum}`).value;
+                            const depDate = segment.querySelector(`#multi-departure-date-${segmentNum}`).value;
+                            message += `\nالرحلة ${segmentNum}:\n`;
+                            message += `المغادرة من: ${depCity}\n`;
+                            message += `الوصول إلى: ${arrCity}\n`;
+                            message += `تاريخ المغادرة: ${depDate}\n`;
+                        });
+                    } else {
+                        const departureCity = document.getElementById('departure-city').value;
+                        const arrivalCity = document.getElementById('arrival-city').value;
+                        const departureDate = document.getElementById('departure-date').value;
+                        const returnDate = document.getElementById('return-date').value;
+
+                        message += `المغادرة من: ${departureCity}\n`;
+                        message += `الوصول إلى: ${arrivalCity}\n`;
+                        message += `تاريخ المغادرة: ${departureDate}\n`;
+                        if (selectedType === 'round-trip' && returnDate) {
+                            message += `تاريخ العودة: ${returnDate}\n`;
+                        }
+                    }
+
+                    message += `عدد البالغين: ${adults}\n`;
+                    if (children > 0) {
+                        message += `عدد الأطفال (2-11 سنة): ${children}\n`;
+                    }
+                    if (infants > 0) {
+                        message += `عدد الرضع (أقل من سنتين): ${infants}\n`;
+                    }
+                    message += `درجة الطيران المفضلة: ${flightClass}\n`;
+                    if (notes) {
+                        message += `ملاحظات إضافية: ${notes}\n`;
+                    }
+
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+            // Set minimum dates for date inputs and ensure return date is after departure
+            function updateMinDates() {
+                const today = new Date().toISOString().split('T')[0];
+                const departureDateInput = document.getElementById('departure-date');
+                const returnDateInput = document.getElementById('return-date');
+
+                if (departureDateInput) {
+                    departureDateInput.min = today;
+                    if (!departureDateInput.value) {
+                        departureDateInput.value = today;
+                    }
+                }
+                if (returnDateInput) {
+                    returnDateInput.min = today;
+                    if (!returnDateInput.value) {
+                        const nextWeek = new Date();
+                        nextWeek.setDate(nextWeek.getDate() + 7);
+                        returnDateInput.value = nextWeek.toISOString().split('T')[0];
+                    }
+                }
+
+                if (departureDateInput && returnDateInput) {
+                    departureDateInput.removeEventListener('change', ensureReturnDateAfterDeparture); // Remove old listener
+                    departureDateInput.addEventListener('change', ensureReturnDateAfterDeparture); // Add new listener
+                }
+
+                // Update min dates for multi-city inputs
+                multiCityFlightsContainer.querySelectorAll('input[type="date"]').forEach(input => {
+                    input.min = today;
+                    if (!input.value) {
+                         input.value = today;
+                    }
+                });
+            }
+
+            function ensureReturnDateAfterDeparture() {
+                const departureDateInput = document.getElementById('departure-date');
+                const returnDateInput = document.getElementById('return-date');
+                if (returnDateInput.value < departureDateInput.value) {
+                    returnDateInput.value = departureDateInput.value;
+                }
+                returnDateInput.min = departureDateInput.value;
+            }
+            
+            // Initial call to set min dates and toggle fields on load
+            toggleFlightFields(); // To ensure initial state is correct for round-trip
+            updateMinDates(); // To set initial min dates for all fields
+
+            // ------------------------------------
+            // AI Travel Assistant (Client-Side only - Backend integration needed for real AI)
+            // ------------------------------------
+            const openChatButton = document.getElementById('open-chat');
+            const closeChatButton = document.getElementById('close-chat');
+            const aiChatInterface = document.getElementById('ai-chat-interface');
+            const chatInput = document.getElementById('chat-input');
+            const sendChatButton = document.getElementById('send-chat');
+            const chatMessagesContainer = document.getElementById('chat-messages');
+
+            if (openChatButton) {
+                openChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.remove('hidden');
+                });
+            }
+            if (closeChatButton) {
+                closeChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.add('hidden');
+                });
+            }
+
+            if (sendChatButton && chatInput && chatMessagesContainer) {
+                sendChatButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+
+                function sendMessage() {
+                    const userMessage = chatInput.value.trim();
+                    if (userMessage === '') return;
+
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.classList.add('mb-2', 'text-left', 'text-blue-800', 'p-2', 'bg-blue-100', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                    userMessageDiv.textContent = userMessage;
+                    chatMessagesContainer.appendChild(userMessageDiv);
+                    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+
+                    chatInput.value = '';
+
+                    setTimeout(() => {
+                        const aiResponseDiv = document.createElement('div');
+                        aiResponseDiv.classList.add('mb-2', 'text-right', 'text-gray-700', 'p-2', 'bg-gray-200', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                        
+                        let aiResponseText = '';
+                        if (userMessage.includes('أسعار العمرة') || userMessage.includes('عمرة')) {
+                            aiResponseText = 'لمعرفة تفاصيل برامج العمرة، يرجى زيارة صفحة برامج الحج والعمرة من خلال "خدماتنا" أو القائمة العلوية.';
+                        } else if (userMessage.includes('حج')) {
+                            aiResponseText = 'لمعلومات عن برامج الحج، يرجى زيارة صفحة برامج الحج والعمرة من خلال "خدماتنا" أو التواصل معنا مباشرة للحصول على أحدث التفاصيل.';
+                        } else if (userMessage.includes('حجز طيران') || userMessage.includes('طيران')) {
+                            aiResponseText = 'لحجز الطيران، يرجى ملء النموذج في هذه الصفحة وإرسال استفساركم.';
+                        } else if (userMessage.includes('حجز فندق') || userMessage.includes('فندق')) {
+                            aiResponseText = 'لحجز الفنادق، يرجى زيارة صفحة حجز الفنادق الخاصة بنا من خلال "خدماتنا" لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('تأشيرة') || userMessage.includes('فيزا')) {
+                            aiResponseText = 'لخدمات التأشيرات، يرجى زيارة صفحة خدمات التأشيرات الخاصة بنا من خلال "خدماتنا" لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('شكرا') || userMessage.includes('شكراً')) {
+                            aiResponseText = 'العفو! يسعدنا خدمتك دائماً في YassirouTravel. هل يمكنني المساعدة في أي شيء آخر؟';
+                        } else {
+                            aiResponseText = 'مرحباً بك! أنا مساعدك الذكي في YassirouTravel. كيف يمكنني مساعدتك اليوم؟ يمكنك أن تسأل عن برامج العمرة، الحج، الرحلات السياحية، حجز الطيران، الفنادق، أو التأشيرات. (هذه إجابة تجريبية، لخدمة AI كاملة تحتاج لربط خادم).';
+                        }
+                        aiResponseDiv.textContent = aiResponseText;
+                        chatMessagesContainer.appendChild(aiResponseDiv);
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

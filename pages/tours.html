@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YassirouTravel - الرحلات السياحية</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex justify-start items-center px-4"> <a href="../index.html" class="text-lg font-semibold text-emerald-600 hover:text-emerald-700 transition duration-300">
+            <i class="fas fa-home ml-2"></i>العودة للصفحة الرئيسية
+        </a>
+    </div>
+</header>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-6 md:hidden">
+        <button id="close-menu" class="absolute top-4 left-4 text-gray-700 text-3xl focus:outline-none">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="../index.html" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">الرئيسية</a>
+        <a href="../index.html#services" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">خدماتنا</a>
+        <a href="hajj-umrah.html" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">برامج الحج والعمرة</a>
+        <a href="#" class="text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">الرحلات السياحية</a>
+        <a href="../index.html#contact" class="text-gray-700 hover:text-emerald-600 text-2xl font-semibold transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">اتصل بنا</a>
+    </div>
+
+    <section id="tour-packages" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">الرحلات السياحية</h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-700">اكتشف جمال العالم مع برامجنا السياحية المتنوعة التي تناسب كل الأذواق.</p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="filter-btn bg-emerald-600 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-emerald-700 transition duration-300" data-category="all">الكل</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-300 transition duration-300" data-category="europe">أوروبا</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-300 transition duration-300" data-category="asia">آسيا</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-300 transition duration-300" data-category="africa">أفريقيا</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-300 transition duration-300" data-category="local">رحلات داخلية</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="tour-cards-container">
+                <div class="trip-card bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:translate-y-[-5px]" data-category="europe">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%2387CEEB'/%3E%3Cpath d='M200,20 L300,230 H100 Z' fill='%23FFD700'/%3E%3Cpath d='M100,200 L150,100 L250,100 L300,200 Z' fill='%23A9A9A9'/%3E%3Ccircle cx='180' cy='130' r='10' fill='white'/%3E%3Ccircle cx='220' cy='130' r='10' fill='white'/%3E%3C/svg%3E" alt="Europe Tour" class="w-full h-48 object-cover">
+                    <div class="p-6 text-right">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">جولة في أوروبا</h3>
+                        <p class="text-gray-600 mb-4">استكشف المدن الأوروبية الساحرة والمعالم التاريخية.</p>
+                        <button class="whatsapp-inquiry-btn whatsapp-btn" data-package="جولة في أوروبا">
+                            استفسر عبر الواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="trip-card bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:translate-y-[-5px]" data-category="asia">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23CD853F'/%3E%3Ccircle cx='100' cy='150' r='40' fill='%23FFD700'/%3E%3Crect x='250' y='80' width='80' height='100' fill='%23B0C4DE'/%3E%3Cpath d='M290,80 L290,180 L320,180 L320,80 Z' fill='%236A5ACD'/%3E%3C/svg%3E" alt="Asia Tour" class="w-full h-48 object-cover">
+                    <div class="p-6 text-right">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">مغامرة في آسيا</h3>
+                        <p class="text-gray-600 mb-4">تجربة ثقافات آسيوية متنوعة ومناظر طبيعية خلابة.</p>
+                        <button class="whatsapp-inquiry-btn whatsapp-btn" data-package="مغامرة في آسيا">
+                            استفسر عبر الواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="trip-card bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:translate-y-[-5px]" data-category="africa">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%238B4513'/%3E%3Ccircle cx='150' cy='180' r='50' fill='%23DAA520'/%3E%3Ccircle cx='250' cy='120' r='40' fill='%23F4A460'/%3E%3Cpath d='M200,100 L220,150 L180,150 Z' fill='%23228B22'/%3E%3C/svg%3E" alt="Africa Safari" class="w-full h-48 object-cover">
+                    <div class="p-6 text-right">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">سفاري في أفريقيا</h3>
+                        <p class="text-gray-600 mb-4">مغامرة مثيرة في قلب الطبيعة البرية الأفريقية.</p>
+                        <button class="whatsapp-inquiry-btn whatsapp-btn" data-package="سفاري في أفريقيا">
+                            استفسر عبر الواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="trip-card bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:translate-y-[-5px]" data-category="local">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%2387CEEB'/%3E%3Ccircle cx='200' cy='125' r='60' fill='%23FFCC29'/%3E%3Cpath d='M200,125 L250,150 L200,200 L150,150 Z' fill='%23008000'/%3E%3Ccircle cx='200' cy='125' r='10' fill='white'/%3E%3C/svg%3E" alt="Local Tour" class="w-full h-48 object-cover">
+                    <div class="p-6 text-right">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">رحلات داخلية</h3>
+                        <p class="text-gray-600 mb-4">استكشف جمال بلدك مع برامجنا المحلية.</p>
+                        <button class="whatsapp-inquiry-btn whatsapp-btn" data-package="رحلات داخلية">
+                            استفسر عبر الواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+            <p>&copy; 2025 YassirouTravel. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <button id="open-chat" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none transition duration-300 z-40">
+        <i class="fas fa-robot text-2xl"></i>
+    </button>
+
+    <div id="ai-chat-interface" class="hidden fixed bottom-20 right-6 bg-white w-80 h-96 rounded-lg shadow-xl flex flex-col z-50">
+        <div class="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+            <h3 class="text-lg font-semibold">مساعد Yassirou الذكي</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200 focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto border-b border-gray-200 text-right">
+            <div class="mb-2 text-gray-700">مرحباً! كيف يمكنني مساعدتك في رحلتك اليوم؟</div>
+        </div>
+        <div class="p-4 flex">
+            <input type="text" id="chat-input" class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="اكتب سؤالك هنا...">
+            <button id="send-chat" class="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 focus:outline-none">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappNumber = '201507000933'; // رقم الواتساب الموحد لجميع الاستفسارات
+
+            // ------------------------------------
+            // Mobile Menu Functionality
+            // ------------------------------------
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // ------------------------------------
+            // Tour Packages Filters Functionality
+            // ------------------------------------
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const tripCards = document.querySelectorAll('.trip-card');
+
+            if (filterButtons.length > 0 && tripCards.length > 0) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.dataset.category;
+
+                        filterButtons.forEach(btn => {
+                            // Reset inactive state classes
+                            btn.classList.remove('bg-emerald-600', 'text-white');
+                            btn.classList.add('bg-gray-200', 'text-gray-700'); // Consistent inactive style
+                        });
+                        // Set active state classes
+                        button.classList.remove('bg-gray-200', 'text-gray-700');
+                        button.classList.add('bg-emerald-600', 'text-white');
+
+                        tripCards.forEach(card => {
+                            if (category === 'all' || card.dataset.category === category) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+                document.querySelector('.filter-btn[data-category="all"]').click(); // Activate 'All' by default
+            }
+
+            // ------------------------------------
+            // WhatsApp Inquiry for Trip Packages
+            // ------------------------------------
+            const whatsappInquiryButtons = document.querySelectorAll('.whatsapp-inquiry-btn');
+            whatsappInquiryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const packageName = button.dataset.package;
+                    // Updated message since price/duration are removed
+                    const message = `أهلاً بك! أود الاستفسار عن برنامج: *${packageName}* الذي وجدته على موقعكم (قسم الرحلات السياحية). يرجى تزويدي بالمزيد من التفاصيل.`;
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            });
+
+            // ------------------------------------
+            // AI Travel Assistant (Client-Side only - Backend integration needed for real AI)
+            // ------------------------------------
+            const openChatButton = document.getElementById('open-chat');
+            const closeChatButton = document.getElementById('close-chat');
+            const aiChatInterface = document.getElementById('ai-chat-interface');
+            const chatInput = document.getElementById('chat-input');
+            const sendChatButton = document.getElementById('send-chat');
+            const chatMessagesContainer = document.getElementById('chat-messages');
+
+            if (openChatButton) {
+                openChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.remove('hidden');
+                });
+            }
+            if (closeChatButton) {
+                closeChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.add('hidden');
+                });
+            }
+
+            if (sendChatButton && chatInput && chatMessagesContainer) {
+                sendChatButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+
+                function sendMessage() {
+                    const userMessage = chatInput.value.trim();
+                    if (userMessage === '') return;
+
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.classList.add('mb-2', 'text-left', 'text-blue-800', 'p-2', 'bg-blue-100', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                    userMessageDiv.textContent = userMessage;
+                    chatMessagesContainer.appendChild(userMessageDiv);
+                    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+
+                    chatInput.value = '';
+
+                    setTimeout(() => {
+                        const aiResponseDiv = document.createElement('div');
+                        aiResponseDiv.classList.add('mb-2', 'text-right', 'text-gray-700', 'p-2', 'bg-gray-200', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                        
+                        let aiResponseText = '';
+                        if (userMessage.includes('أسعار العمرة') || userMessage.includes('عمرة')) {
+                            aiResponseText = 'لمعرفة تفاصيل برامج العمرة، يرجى زيارة صفحة برامج الحج والعمرة من خلال "خدماتنا" أو القائمة العلوية.';
+                        } else if (userMessage.includes('حج')) {
+                            aiResponseText = 'لمعلومات عن برامج الحج، يرجى زيارة صفحة برامج الحج والعمرة من خلال "خدماتنا" أو التواصل معنا مباشرة للحصول على أحدث التفاصيل.';
+                        } else if (userMessage.includes('حجز طيران') || userMessage.includes('طيران')) {
+                            aiResponseText = 'لحجز الطيران، يرجى زيارة صفحة حجز الطيران الخاصة بنا من خلال "خدماتنا" لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('حجز فندق') || userMessage.includes('فندق')) {
+                            aiResponseText = 'لحجز الفنادق، يرجى زيارة صفحة حجز الفنادق الخاصة بنا من خلال "خدماتنا" لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('تأشيرة') || userMessage.includes('فيزا')) {
+                            aiResponseText = 'لخدمات التأشيرات، يرجى زيارة صفحة خدمات التأشيرات الخاصة بنا من خلال "خدماتنا" لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('شكرا') || userMessage.includes('شكراً')) {
+                            aiResponseText = 'العفو! يسعدنا خدمتك دائماً في YassirouTravel. هل يمكنني المساعدة في أي شيء آخر؟';
+                        } else {
+                            aiResponseText = 'مرحباً بك! أنا مساعدك الذكي في YassirouTravel. كيف يمكنني مساعدتك اليوم؟ يمكنك أن تسأل عن برامج العمرة، الحج، الرحلات السياحية، حجز الطيران، الفنادق، أو التأشيرات. (هذه إجابة تجريبية، لخدمة AI كاملة تحتاج لربط خادم).';
+                        }
+                        aiResponseDiv.textContent = aiResponseText;
+                        chatMessagesContainer.appendChild(aiResponseDiv);
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

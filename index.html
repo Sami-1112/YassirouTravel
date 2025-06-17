@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YassirouTravel - رحلات سياحية، عمرة، وحجز طيران وفنادق</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md py-2">
+    <div class="container mx-auto flex justify-between items-center px-2">
+
+        <nav class="hidden md:flex space-x-5 space-x-reverse text-lg"> 
+            <a href="index.html" class="text-gray-800 hover:text-emerald-600 transition duration-300">الرئيسية</a>
+            <a href="#testimonials" class="text-gray-800 hover:text-emerald-600 transition duration-300">آراء العملاء</a>
+            <a href="#contact" class="text-gray-800 hover:text-emerald-600 transition duration-300">تواصل معنا</a>
+        </nav>
+
+        <div class="md:hidden">
+            <button class="text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <section class="hero-section text-center py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fade-in-down">مرحباً بك في يسروا للسفر والسياحة</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-up">شريكك الموثوق لرحلات لا تُنسى حول العالم.</p>
+            <a href="#services" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg animate-scale-in">
+                اكتشف خدماتنا
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">خدماتنا المميزة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="pages/hajj-umrah.html" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-blue-900 mb-4 group-hover:text-blue-950 transition duration-300">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">برامج الحج والعمرة</h3>
+                    <p class="text-gray-700 mb-4">نقدم برامج متكاملة وميسرة لأداء مناسك الحج والعمرة براحة واطمئنان.</p>
+                    <span class="text-blue-900 group-hover:text-blue-950 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+
+                <a href="pages/tours.html" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-blue-600 mb-4 group-hover:text-blue-700 transition duration-300">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">الرحلات السياحية</h3>
+                    <p class="text-gray-700 mb-4">استمتع بتجارب سفر فريدة مع باقاتنا السياحية المصممة خصيصاً لك.</p>
+                    <span class="text-blue-600 group-hover:text-blue-700 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+
+                <a href="pages/flight.html" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-red-600 mb-4 group-hover:text-red-700 transition duration-300">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">حجز الطيران</h3>
+                    <p class="text-gray-700 mb-4">أسرع وأسهل طريقة لحجز تذاكر الطيران إلى أي وجهة حول العالم بأفضل الأسعار.</p>
+                    <span class="text-red-600 group-hover:text-red-700 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+
+                <a href="pages/hotels.html" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-purple-600 mb-4 group-hover:text-purple-700 transition duration-300">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">حجز الفنادق</h3>
+                    <p class="text-gray-700 mb-4">احجز فندقك المثالي في أي مكان حول العالم بأفضل الأسعار المضمونة.</p>
+                    <span class="text-purple-600 group-hover:text-purple-700 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+
+                <a href="pages/visa.html" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-indigo-900 mb-4 group-hover:text-indigo-950 transition duration-300">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">خدمات التأشيرات</h3>
+                    <p class="text-gray-700 mb-4">نساعدك في الحصول على التأشيرات اللازمة لرحلتك بكل سهولة ويسر.</p>
+                    <span class="text-indigo-900 group-hover:text-indigo-950 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+
+                <a href="#" class="service-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl group">
+                    <div class="text-5xl text-green-600 mb-4 group-hover:text-green-700 transition duration-300">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">تأمين السفر</h3>
+                    <p class="text-gray-700 mb-4">تغطية شاملة لرحلتك، لتستمتع براحة البال أينما ذهبت.</p>
+                    <span class="text-green-600 group-hover:text-green-700 font-semibold transition duration-300">
+                        اعرف المزيد <i class="fas fa-arrow-left mr-1"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section py-16 bg-emerald-700">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">ابدأ مغامرتك القادمة معنا!</h2>
+            <p class="text-lg md:text-xl mb-8">دع خبراء YassirouTravel يخططون لرحلتك المثالية.</p>
+            <a href="#contact" class="bg-white text-emerald-700 hover:bg-gray-200 font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                تواصل معنا الآن
+            </a>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">ماذا يقول عملاؤنا؟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card">
+                    <p class="text-gray-700 italic mb-4">"تجربة سفر رائعة مع YassirouTravel! كل شيء كان مرتباً بإتقان، من الحجز حتى العودة. أنصح بهم بشدة."</p>
+                    <p class="font-semibold text-gray-800">- أحمد السيد</p>
+                </div>
+                <div class="testimonial-card"> 
+                    <p class="text-gray-700 italic mb-4">"خدمة عملاء ممتازة واستجابة سريعة. حصلت على تأشيرتي في وقت قياسي. شكراً لكم!"</p>
+                    <p class="font-semibold text-gray-800">- فاطمة علي</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="text-gray-700 italic mb-4">"برنامج عمرة متكامل ومريح للغاية. لقد اهتموا بأدق التفاصيل. جزاكم الله خيراً."</p>
+                    <p class="font-semibold text-gray-800">- خالد المحمدي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">تواصل معنا</h2>
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
+                <div class="contact-info bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">معلومات الاتصال</h3>
+                    <p class="text-gray-700 mb-3"><i class="fas fa-map-marker-alt text-emerald-600 text-xl ml-2"></i> بجوار مدرسة عبدالهادي السقا، ايتاي البارود، البحيرة</p>
+                    <p class="text-gray-700 mb-3"><i class="fas fa-phone-alt text-emerald-600 text-xl ml-2"></i> +201507000933</p>
+                    <p class="text-gray-700 mb-3"><i class="fas fa-envelope text-emerald-600 text-xl ml-2"></i> info@yassiroutravel.com</p>
+                    <div class="mt-6 flex justify-end gap-4">
+                        <a href="#" class="text-gray-700 hover:text-emerald-600"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-emerald-600"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-emerald-600"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-emerald-600"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">أرسل لنا رسالة</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="sr-only">اسمك</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="اسمك الكامل" required>
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">بريدك الإلكتروني</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="بريدك الإلكتروني" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="sr-only">الموضوع</label>
+                            <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="الموضوع" required>
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">رسالتك</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="رسالتك" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full whatsapp-btn">
+                            أرسل الرسالة <i class="fab fa-whatsapp mr-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+            <p>&copy; 2025 YassirouTravel. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappNumber = '201507000933'; // رقم الواتساب الموحد الجديد
+
+            // ------------------------------------
+            // Contact Form Submission (for WhatsApp)
+            // ------------------------------------
+            const contactForm = document.querySelector('#contact .contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const messageText = document.getElementById('message').value;
+
+                    let whatsappMessage = `رسالة من نموذج الاتصال (الموقع):\n`;
+                    whatsappMessage += `الاسم: ${name}\n`;
+                    whatsappMessage += `البريد الإلكتروني: ${email}\n`;
+                    whatsappMessage += `الموضوع: ${subject}\n`;
+                    whatsappMessage += `الرسالة: ${messageText}\n`;
+
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+            // ------------------------------------
+            // AI Travel Assistant (Client-Side only - Backend integration needed for real AI)
+            // ------------------------------------
+            const openChatButton = document.getElementById('open-chat');
+            const closeChatButton = document.getElementById('close-chat');
+            const aiChatInterface = document.getElementById('ai-chat-interface');
+            const chatInput = document.getElementById('chat-input');
+            const sendChatButton = document.getElementById('send-chat');
+            const chatMessagesContainer = document.getElementById('chat-messages');
+
+            if (openChatButton) {
+                openChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.remove('hidden');
+                });
+            }
+            if (closeChatButton) {
+                closeChatButton.addEventListener('click', () => {
+                    aiChatInterface.classList.add('hidden');
+                });
+            }
+
+            if (sendChatButton && chatInput && chatMessagesContainer) {
+                sendChatButton.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+
+                function sendMessage() {
+                    const userMessage = chatInput.value.trim();
+                    if (userMessage === '') return;
+
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.classList.add('mb-2', 'text-left', 'text-blue-800', 'p-2', 'bg-blue-100', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                    userMessageDiv.textContent = userMessage;
+                    chatMessagesContainer.appendChild(userMessageDiv);
+                    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+
+                    chatInput.value = '';
+
+                    setTimeout(() => {
+                        const aiResponseDiv = document.createElement('div');
+                        aiResponseDiv.classList.add('mb-2', 'text-right', 'text-gray-700', 'p-2', 'bg-gray-200', 'rounded-lg', 'inline-block', 'max-w-[80%]');
+                        
+                        let aiResponseText = '';
+                        if (userMessage.includes('أسعار العمرة') || userMessage.includes('عمرة')) {
+                            aiResponseText = 'لمعرفة تفاصيل برامج العمرة، يرجى زيارة صفحة برامج الحج والعمرة من خلال "خدماتنا" أو التواصل معنا مباشرة.';
+                        } else if (userMessage.includes('حج')) {
+                            aiResponseText = 'لمعلومات عن برامج الحج، يرجى زيارة صفحة برامج الحج والعمرة أو التواصل معنا مباشرة للحصول على أحدث التفاصيل.';
+                        } else if (userMessage.includes('حجز طيران') || userMessage.includes('طيران')) {
+                            aiResponseText = 'لحجز الطيران، يرجى زيارة صفحة حجز الطيران الخاصة بنا لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('حجز فندق') || userMessage.includes('فندق')) {
+                            aiResponseText = 'لحجز الفنادق، يرجى زيارة صفحة حجز الفنادق الخاصة بنا لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('تأشيرة') || userMessage.includes('فيزا')) {
+                            aiResponseText = 'لخدمات التأشيرات، يرجى زيارة صفحة خدمات التأشيرات الخاصة بنا لملء النموذج وإرسال استفساركم.';
+                        } else if (userMessage.includes('شكرا') || userMessage.includes('شكراً')) {
+                            aiResponseText = 'العفو! يسعدنا خدمتك دائماً في YassirouTravel. هل يمكنني المساعدة في أي شيء آخر؟';
+                        } else {
+                            aiResponseText = 'مرحباً بك! أنا مساعدك الذكي في YassirouTravel. كيف يمكنني مساعدتك اليوم؟ يمكنك أن تسأل عن برامج العمرة، الحج، الرحلات السياحية، حجز الطيران، الفنادق، أو التأشيرات. (هذه إجابة تجريبية، لخدمة AI كاملة تحتاج لربط خادم).';
+                        }
+                        aiResponseDiv.textContent = aiResponseText;
+                        chatMessagesContainer.appendChild(aiResponseDiv);
+                        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
